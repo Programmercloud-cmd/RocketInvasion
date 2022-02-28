@@ -36,10 +36,22 @@ moving_left = False
 moving_up = False
 moving_down = False
 
-factor = 1
+factor = 2
 
 
 x_vel = 0
+y_vel = 0
+
+
+moving_forward = False
+moving_backwards = False
+
+max_speed = 0.01
+move_factor = 0.0005
+move_fast_factor = 2
+
+f_vel = 0
+b_vel = 0
 
 def redraw():
 
@@ -90,11 +102,45 @@ while not quit:
                     moving_down = True
                     moving_up = False
                     y_vel = int(event.value*factor)
+        if event.type == JOYBUTTONDOWN:
+
+            if event.button == 4:
+
+                moving_backwards = False
+                moving_forward = True
+
+                f_vel = move_factor
+                b_vel = 0
+
+            if event.button == 5:
+
+                moving_backwards = True
+                moving_forward = False
+
+                b_vel = move_factor
+                f_vel = 0
+            if event.button == 0:
+
+                f_vel = b_vel = 0
+
+            if event.button == 2:
+
+                if f_vel < max_speed and b_vel < max_speed:
+                    f_vel *= move_fast_factor
+                    b_vel *= move_fast_factor
+
+            if event.button == 1:
+
+                f_vel /= move_fast_factor
+                b_vel /= move_fast_factor
 
     if moving_left or moving_right:
         BACKGROUND_ENGINE.move_left(x_vel)
         BACKGROUND_ENGINE.move_up(y_vel)
 
+
+    BACKGROUND_ENGINE.engine.move_in(f_vel)
+    BACKGROUND_ENGINE.engine.move_out(b_vel)
     redraw()
 
 

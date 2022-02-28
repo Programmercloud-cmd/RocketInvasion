@@ -17,4 +17,4 @@ class Star(SpaceObject):
 
     def draw(self, screen):
 
-        pygame.draw.circle(screen, (0xFF, 0xFF, 0xFF), (self.x, self.y), self.w)
+        pygame.draw.circle(screen, (0xFF, 0xFF, 0xFF), (round(self.x), round(self.y)), round(self.w))

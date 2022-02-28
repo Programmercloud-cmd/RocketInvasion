@@ -19,7 +19,7 @@ class Background:
         self.curr_x = 0
         self.curr_y = 0
 
-        self.engine = BackgroundEngine(x, y, w, h)
+        self.engine = BackgroundEngine(x, y, w, h, screen_w, screen_h)
 
     def move_up(self, amount):
 
