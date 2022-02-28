@@ -17,6 +17,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 
 clock = pygame.time.Clock()
 
+
 def redraw():
 
     screen.fill((0, 0, 0))
@@ -37,8 +38,5 @@ while not quit:
 
     redraw()
 
-    if pressed[0]:
-
-        quit = True
 
 pygame.quit()
