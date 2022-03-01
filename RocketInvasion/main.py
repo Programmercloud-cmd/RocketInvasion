@@ -14,6 +14,7 @@ from stdafx import *
 
 pygame.init()
 
+
 joysticks = []
 
 for i in range(pygame.joystick.get_count()):
@@ -57,7 +58,6 @@ def redraw():
 
     BACKGROUND_ENGINE.act()
     BACKGROUND_ENGINE.draw(screen)
-
 
     pygame.display.flip()
 
