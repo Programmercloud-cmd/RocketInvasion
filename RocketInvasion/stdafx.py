@@ -9,4 +9,5 @@ from Components.Star import *
 from Components.Background import *
 from Components.BackgroundEngine import *
 from Components.colors import *
+from Components.Weapon import *
 import random
