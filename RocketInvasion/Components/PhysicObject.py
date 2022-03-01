@@ -14,21 +14,13 @@ class PhysicObject(ABC):
     def draw(self, screen):
         pass
 
-    def move_up(self, amount):
+    def move_horizontally(self, amount):
 
-        self.y_vel -= amount
+        self.x += amount
 
-    def move_down(self, amount):
+    def move_vertically(self, amount):
 
-        self.y_vel += amount
-
-    def move_left(self, amount):
-
-        self.x_vel -= amount
-
-    def move_right(self, amount):
-
-        self.x_vel += amount
+        self.y += amount
 
     #method for acting
     def act(self):

@@ -21,29 +21,15 @@ class Background:
 
         self.engine = BackgroundEngine(x, y, w, h, screen_w, screen_h)
 
-    def move_up(self, amount):
+    def move_horizontally(self, amount):
 
-        if self.curr_y - amount > self.x:
-            self.curr_y -= amount
-            self.engine.move_up(amount)
+        self.x += amount
+        self.engine.move_horizontally(amount)
 
-    def move_down(self, amount):
+    def move_vertically(self, amount):
 
-        if self.curr_y + amount < self.y+self.h:
-            self.curr_y += amount
-            self.engine.move_down(amount)
-
-    def move_left(self, amount):
-
-        if self.curr_x - amount > self.x:
-            self.curr_x -= amount
-            self.engine.move_left(amount)
-
-    def move_right(self, amount):
-
-        if self.curr_x + amount < self.x+self.w:
-            self.curr_x += amount
-            self.engine.move_right(amount)
+        self.y += amount
+        self.engine.move_vertically(amount)
 
     def act(self):
 

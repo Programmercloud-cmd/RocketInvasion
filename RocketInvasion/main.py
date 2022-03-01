@@ -135,8 +135,8 @@ while not quit:
                 b_vel /= move_fast_factor
 
     if moving_left or moving_right:
-        BACKGROUND_ENGINE.move_left(x_vel)
-        BACKGROUND_ENGINE.move_up(y_vel)
+        BACKGROUND_ENGINE.move_horizontally(x_vel)
+        BACKGROUND_ENGINE.move_vertically(y_vel)
 
 
     BACKGROUND_ENGINE.engine.move_in(f_vel)

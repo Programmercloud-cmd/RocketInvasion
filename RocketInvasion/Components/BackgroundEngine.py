@@ -46,7 +46,7 @@ class BackgroundEngine:
 
         for el in self.layer_1:
 
-            el.w += (el.w*amount/10)
+            el.w += (el.w*amount/2)
 
             el.x += (el.x-(self.screen_w/2))*amount
             el.y += (el.y-(self.screen_h/2))*amount
@@ -65,7 +65,7 @@ class BackgroundEngine:
 
         for el in self.layer_1:
 
-            el.w -= (el.w*amount/1)
+            el.w -= (el.w*amount/2)
 
             el.x -= (el.x-(self.screen_w/2))*amount
             el.y -= (el.y-(self.screen_h/2))*amount
@@ -80,29 +80,16 @@ class BackgroundEngine:
                                     random.randrange(1, 4), 0)
                 )
 
-    def move_up(self, amount):
-
-        #layering objects
-        for el in self.layer_1:
-            el.move_up(amount)
-
-
-
-    def move_down(self, amount):
+    def move_horizontally(self, amount):
 
         for el in self.layer_1:
-            el.move_down(amount)
+            el.move_horizontally(amount)
 
-    def move_left(self, amount):
-
-        for el in self.layer_1:
-            el.move_left(amount)
-
-    def move_right(self, amount):
+    def move_vertically(self, amount):
 
         for el in self.layer_1:
-            el.move_right(amount)
 
+            el.move_vertically(amount)
 
     def draw(self, screen):
         #drawing all objects
