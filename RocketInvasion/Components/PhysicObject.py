@@ -5,9 +5,10 @@ from abc import ABC, abstractmethod
 
 class PhysicObject(ABC):
 
-    def __init__(self, x, y, w, h):
+    def __init__(self, x, y, z, w, h):
 
         self.x, self.y, self.w, self.h = x, y, w, h
+        self.z = z
         self.x_vel = self.y_vel = 0
 
     @abstractmethod

@@ -8,10 +8,10 @@ class Weapon(PhysicObject):
 
     #cooldown in ms
 
-    def __init__(self, x, y, w, h, damage=0, left_path=None, right_path=None, range=800,
+    def __init__(self, x, y, z, w, h, damage=0, left_path=None, right_path=None, range=800,
                  cooldown=400):
 
-        super().__init__(x, y, w, h)
+        super().__init__(x, y, z, w, h)
 
         self.left_image = (pygame.image.load(left_path) if left_path is not None else None)
         self.right_image = (pygame.image.load(right_path) if right_path is not None else None)
@@ -39,4 +39,4 @@ class Default_Gun(Weapon):
 
     def __init__(self):
 
-        super().__init__(0, 0, 0, 0, 250, None, None, 800, 400)
+        super().__init__(0, 0, 0, 0, 0, 250, None, None, 800, 400)

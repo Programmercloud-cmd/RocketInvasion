@@ -38,7 +38,7 @@ class BackgroundEngine:
 
         for _ in range(layer_1_object_count):
 
-            self.layer_1.append(Star(random.randrange(self.x, self.x+self.w), random.randrange(self.y, self.y+self.h),
+            self.layer_1.append(Star(random.randrange(self.x, self.x+self.w), random.randrange(self.y, self.y+self.h), 800,
                                 random.randrange(1, 4), 0)
             )
 
@@ -46,7 +46,7 @@ class BackgroundEngine:
 
         for el in self.layer_1:
 
-            el.w += (el.w*amount/2)
+            el.z -= 0.01
 
             el.x += (el.x-(self.screen_w/2))*amount
             el.y += (el.y-(self.screen_h/2))*amount
@@ -57,7 +57,7 @@ class BackgroundEngine:
             if (el.x+el.w < 0) or (el.x > self.screen_w) or (el.y > self.screen_h) or (el.y+el.h < 0):
 
                 self.layer_1.pop(self.layer_1.index(el))
-                self.layer_1.append(Star(random.randrange(0, self.screen_w), random.randrange(0, self.screen_h),
+                self.layer_1.append(Star(random.randrange(0, self.screen_w), random.randrange(0, self.screen_h), 800,
                                     random.randrange(1, 4), 0)
                 )
 
@@ -65,7 +65,7 @@ class BackgroundEngine:
 
         for el in self.layer_1:
 
-            el.w -= (el.w*amount/2)
+            el.z += 0.01
 
             el.x -= (el.x-(self.screen_w/2))*amount
             el.y -= (el.y-(self.screen_h/2))*amount
@@ -76,13 +76,14 @@ class BackgroundEngine:
             if el.w < 0.1:
 
                 self.layer_1.pop(self.layer_1.index(el))
-                self.layer_1.append(Star(random.randrange(0, self.screen_w), random.randrange(0, self.screen_h),
+                self.layer_1.append(Star(random.randrange(0, self.screen_w), random.randrange(0, self.screen_h), 800,
                                     random.randrange(1, 4), 0)
                 )
 
     def move_horizontally(self, amount):
 
         for el in self.layer_1:
+
             el.move_horizontally(amount)
 
     def move_vertically(self, amount):

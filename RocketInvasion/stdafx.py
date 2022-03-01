@@ -10,4 +10,5 @@ from Components.Background import *
 from Components.BackgroundEngine import *
 from Components.colors import *
 from Components.Weapon import *
+from Components.Ship import *
 import random

@@ -12,6 +12,8 @@ import pygame
 from pygame.locals import *
 from stdafx import *
 
+import time
+
 pygame.init()
 
 
@@ -53,6 +55,8 @@ move_fast_factor = 2
 
 f_vel = 0
 b_vel = 0
+
+print(time.perf_counter())
 
 def redraw():
 
@@ -135,8 +139,8 @@ while not quit:
                 b_vel /= move_fast_factor
 
     if moving_left or moving_right:
-        BACKGROUND_ENGINE.move_horizontally(x_vel)
-        BACKGROUND_ENGINE.move_vertically(y_vel)
+        BACKGROUND_ENGINE.move_horizontally(-x_vel)
+        BACKGROUND_ENGINE.move_vertically(-y_vel)
 
 
     BACKGROUND_ENGINE.engine.move_in(f_vel)
