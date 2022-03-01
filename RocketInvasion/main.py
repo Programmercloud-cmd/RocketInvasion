@@ -4,7 +4,7 @@ RocketInvasion
 
 -Version: 1.0
 -Date:    28.2.2022
--Authors: @pycppdel, @thassi-droid
+-Authors: @pycppdel, @thassi-droid, @ProgrammerCloud-cmd
 """
 
 #import sector
