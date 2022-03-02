@@ -24,8 +24,8 @@ class obstacle(SpaceObject):
 
 class meteoroid(obstacle):
 
-    hpStartMeteoroid = 500 #increase with time --> timer
-    hpLimitMeteoroid = 750
+    hpStartMeteoroid = 500 #final
+    hpLimitMeteoroid = 750 #increase with time --> timer
 
     def __init__(self):
 
@@ -33,8 +33,8 @@ class meteoroid(obstacle):
 
 class spaceTrash(obstacle):
 
-    hpStartSpaceTrash = 750 #increase with time --> timer
-    hpLimitSpaceTrash = 1000
+    hpStartSpaceTrash = 750 #final
+    hpLimitSpaceTrash = 1000 #increase with time --> timer
 
     def __init__(self):
 
